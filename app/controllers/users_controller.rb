@@ -4,14 +4,17 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all.order(:id)
+    authorize @users
   end
 
   def edit
     @user = User.find(params[:id])
+    authorize @user
   end
 
   def update
     @user = User.find(params[:id])
+    authorize @user
     if @user.update_attributes(user_params)
       flash[:notice] = "Successfully updated User."
       redirect_to '/users'
