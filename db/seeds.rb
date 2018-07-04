@@ -10,3 +10,6 @@
 User.create(email:"admin@test.com", password: "password", password_confirmation: "password", role: "admin")
 User.create(email:"teacher@test.com", password: "password", password_confirmation: "password", role: "teacher")
 User.create(email:"student@test.com", password: "password", password_confirmation: "password", role: "student")
+
+Classroom.create(user_id: 2, name: 'the first classroom')
+Classroom.create(user_id: 2, name: 'the second classroom')
