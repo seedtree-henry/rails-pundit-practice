@@ -9,3 +9,7 @@ Things you are going to to in this project:
 - Install pundit gem.
 
 - User controller can not be accessed by students and teachers.
+
+- Classrooms can not be created by students and teachers.
+
+- Teachers and Admin can edit the name of classrooms.
