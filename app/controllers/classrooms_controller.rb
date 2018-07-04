@@ -5,27 +5,31 @@ class ClassroomsController < ApplicationController
   # GET /classrooms.json
   def index
     @classrooms = Classroom.all
+    authorize @classrooms
   end
 
   # GET /classrooms/1
   # GET /classrooms/1.json
   def show
+    authorize @classroom
   end
 
   # GET /classrooms/new
   def new
     @classroom = Classroom.new
+    authorize @classroom
   end
 
   # GET /classrooms/1/edit
   def edit
+    authorize @classroom
   end
 
   # POST /classrooms
   # POST /classrooms.json
   def create
     @classroom = Classroom.new(classroom_params)
-
+    authorize @classroom
     respond_to do |format|
       if @classroom.save
         format.html { redirect_to @classroom, notice: 'Classroom was successfully created.' }
@@ -40,6 +44,7 @@ class ClassroomsController < ApplicationController
   # PATCH/PUT /classrooms/1
   # PATCH/PUT /classrooms/1.json
   def update
+    authorize @classroom
     respond_to do |format|
       if @classroom.update(classroom_params)
         format.html { redirect_to @classroom, notice: 'Classroom was successfully updated.' }
@@ -54,6 +59,7 @@ class ClassroomsController < ApplicationController
   # DELETE /classrooms/1
   # DELETE /classrooms/1.json
   def destroy
+    authorize @classroom
     @classroom.destroy
     respond_to do |format|
       format.html { redirect_to classrooms_url, notice: 'Classroom was successfully destroyed.' }
