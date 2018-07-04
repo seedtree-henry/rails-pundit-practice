@@ -1,15 +1,15 @@
 class UserPolicy < Struct.new(:user, :other_user)
 
   def index?
-    user.role == 'admin'
+    user.admin?
   end
 
   def edit?
-    user.role == 'admin'
+    user.admin?
   end
 
   def update?
-    user.role == 'admin'
+    user.admin?
   end
 
 

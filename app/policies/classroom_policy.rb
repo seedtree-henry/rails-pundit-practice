@@ -7,22 +7,22 @@ class ClassroomPolicy
   end
 
   def index?
-    user.role == 'admin'
+    user.admin?
   end
 
   def create?
-    user.role == 'admin'
+    user.admin?
   end
 
   def show?
-    user.role == 'admin' || user.role == 'teacher'
+    user.admin? || user.teacher?
   end
 
   def edit?
-    user.role == 'admin' || user.role == 'teacher'
+    user.admin? || user.teacher?
   end
 
   def update?
-    user.role == 'admin' || user.role == 'teacher'
+    user.admin? || user.teacher?
   end
 end

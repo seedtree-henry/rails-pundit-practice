@@ -25,4 +25,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :classrooms
+
+  def admin?
+    role == 'admin'
+  end
+
+  def teacher?
+    role == 'teacher'
+  end
 end
